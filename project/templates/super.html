@@ -1,0 +1,36 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Vehicle Management System</h1>
+<a href="{% url 'pro' %}">ADD</a>           <button><a href="{% url 'logout' %}">logout</a></button>
+
+<table>
+    <tr>
+        <th>Number</th>
+        <th>Type</th>
+        <th>Model</th>
+        <th>Des</th>
+        <th>Image</th>
+        <th>Edit</th>
+        <th>Delete</th>
+
+    </tr>
+    {%for i in star%}
+    <tr>
+        <td>{{i.number}}</td>
+        <td>{{i.type}}</td>
+        <td>{{i.model}}</td>
+        <td>{{i.des}}</td>
+        <td><img src= "{{i.img.url}}"style="width:200px;height:200px;"> </td>
+        <td><a href="{% url 'edit' i.id %}"><button>edit</button></a> </td>
+        <td><a href="{% url 'delete' i.id %}"><button>delete</button></a> </td>
+    </tr>
+    {%endfor%}
+</table>
+</body>
+</html>

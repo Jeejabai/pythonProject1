@@ -1,0 +1,32 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> title</title>
+</head>
+<body>
+<h1>Vehicle Management System</h1>
+<button><a href="{% url 'logout' %}">logout</a></button>
+<table>
+    <tr>
+        <th>Number</th>
+        <th>Type</th>
+        <th>Model</th>
+        <th>Des</th>
+        <th>Image</th>
+
+    </tr>
+    {%for i in pop%}
+    <tr>
+        <td>{{i.number}}</td>
+        <td>{{i.type}}</td>
+        <td>{{i.model}}</td>
+        <td>{{i.des}}</td>
+        <td><img src= "{{i.img.url}}" style="width:200px;height:200px;"> </td>
+
+    </tr>
+    {%endfor%}
+</table>
+</body>
+</html>

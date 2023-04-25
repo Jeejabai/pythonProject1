@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="product" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h1>PRODUCT DETAILS</h1>
+    <label>Vehicle no</label><br>
+    <input type="number" name="number"><br><br>
+    <select name="type">
+        <option>Vehicle type</option>
+        <option>two wheeler</option>
+        <option>three wheeler</option>
+        <option>four wheeler</option>
+    </select><br><br>
+    <label>Vehicle model</label><br>
+    <input type="text" name="model"><br><br>
+    <label>Vehicle description</label><br>
+    <input type="text" name="des"><br><br>
+    <label>Image</label><br>
+    <input type="file" name="img"><br><br>
+    <input type="submit"><br><br>
+</form>
+</body>
+</html>
